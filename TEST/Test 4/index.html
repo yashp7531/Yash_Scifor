@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="login-container">
+      <form id="signup-form" class="login-form">
+        <h2>Sign Up</h2>
+
+        <!-- First Name -->
+        <div class="input-group">
+          <label for="first-name">First Name</label>
+          <div class="input-icon">
+            <i class="fas fa-user"></i>
+            <input
+              type="text"
+              id="first-name"
+              name="first-name"
+              placeholder="Enter your first name"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Last Name -->
+        <div class="input-group">
+          <label for="last-name">Last Name</label>
+          <div class="input-icon">
+            <i class="fas fa-user"></i>
+            <input
+              type="text"
+              id="last-name"
+              name="last-name"
+              placeholder="Enter your last name"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Username -->
+        <div class="input-group">
+          <label for="username">Username</label>
+          <div class="input-icon">
+            <i class="fas fa-user"></i>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="input-group">
+          <label for="email">Email</label>
+          <div class="input-icon">
+            <i class="fas fa-envelope"></i>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="input-group">
+          <label for="password">Password</label>
+          <div class="input-icon">
+            <i class="fas fa-lock"></i>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              minlength="8"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="input-group buttons">
+          <button type="submit" class="btn">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("signup-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the form from submitting the traditional way
+
+          // Display a success message with emojis
+          alert(
+            "🎉 Success! 🎉\n\nThank you for signing up! We'll be in touch soon."
+          );
+
+          // Clear the form after submission
+          document.getElementById("signup-form").reset();
+        });
+    </script>
+  </body>
+</html>
