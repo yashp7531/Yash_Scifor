@@ -1,0 +1,81 @@
+1.tag selector:
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-color: black;
+            }
+            h1{
+                color:blue;
+           
+            }
+        </style>
+        <title>tag selector</title>
+    </head>
+    <body>
+        <h1>this is heading</h1>
+       
+    </body>
+</html>
+
+2.id selector:
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-color: black;
+            }
+            #id1{
+                color:red;
+            }
+        </style>
+        <title>id selector</title>
+    </head>
+    <body>
+        <h1 id="id1">this is heading</h1>
+    </body>
+</html>
+
+3.class selector:
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-color: antiquewhite;
+            }
+            .c1{
+                color:blue;
+            }
+        </style>
+        <title>class selector</title>
+    </head>
+    <body>
+        <h1 class="c1">this is heading</h1>
+    </body>
+</html>
+
+4.grouping selector:
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-color: antiquewhite;
+            }
+            .c1{
+                color:blue;
+            }
+        </style>
+        <title>class selector</title>
+    </head>
+    <body>
+        <h1 class="c1">this is heading</h1>
+    </body>
+</html>
