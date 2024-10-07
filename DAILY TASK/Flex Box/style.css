@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Add a background color to the body */
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-around;
+    height: 100vh;
+    border: 2px solid #333;
+    padding: 20px;
+    background-color: #eaeaea; /* Background for container */
+  }
+  
+  .item {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+    margin: 10px;
+    flex-basis: 200px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    order: 0;
+    border: 2px solid #333; /* Add border to each item */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for better effect */
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  .item:hover {
+    transform: scale(1.1); /* Slight scale up on hover */
+    background-color: #2E8B57; /* Darker background on hover */
+  }
+  
+  .item-1 {
+    flex-grow: 2;
+    background-color: #FF5722; /* Custom background for item-1 */
+  }
+  
+  .item-2 {
+    order: 1;
+    background-color: #3F51B5; /* Custom background for item-2 */
+  }
+  
+  .item-3 {
+    align-self: flex-start;
+    background-color: #9C27B0; /* Custom background for item-3 */
+  }
+  
+  .item-4 {
+    background-color: #FF9800; /* Custom background for item-4 */
+  }
+  
+  .item-5 {
+    background-color: #00BCD4; /* Custom background for item-5 */
+  }
+  

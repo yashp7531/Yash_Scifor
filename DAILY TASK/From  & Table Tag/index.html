@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Stylish Form and Table</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Table Section -->
+    <div class="container">
+        <h1>Modern Table</h1>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>28</td>
+                    <td>Male</td>
+                </tr>
+                <tr class="active-row">
+                    <td>Jane Doe</td>
+                    <td>26</td>
+                    <td>Female</td>
+                </tr>
+                <tr>
+                    <td>Sam Smith</td>
+                    <td>30</td>
+                    <td>Male</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Form Section -->
+        <h2>Enhanced Stylish Form</h2>
+        <form class="styled-form" action="#" method="post">
+            <!-- Text Input -->
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name">
+            </div>
+
+            <!-- Email Input -->
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+            </div>
+
+            <!-- Phone Number Input -->
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+            </div>
+
+            <!-- Password Input -->
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+            </div>
+
+            <!-- Radio Input -->
+            <div class="input-group">
+                <label>Gender</label>
+                <label for="male">
+                    <input type="radio" id="male" name="gender" value="male"> Male
+                </label>
+                <label for="female">
+                    <input type="radio" id="female" name="gender" value="female"> Female
+                </label>
+            </div>
+
+            <!-- Checkbox Input -->
+            <div class="input-group">
+                <label>Hobbies</label>
+                <label for="reading">
+                    <input type="checkbox" id="reading" name="hobbies" value="reading"> Reading
+                </label>
+                <label for="traveling">
+                    <input type="checkbox" id="traveling" name="hobbies" value="traveling"> Traveling
+                </label>
+                <label for="sports">
+                    <input type="checkbox" id="sports" name="hobbies" value="sports"> Sports
+                </label>
+            </div>
+
+            <!-- Submit and Button -->
+            <div class="input-group button-group">
+                <input type="submit" value="Submit">
+                <button type="button">Click Me</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
