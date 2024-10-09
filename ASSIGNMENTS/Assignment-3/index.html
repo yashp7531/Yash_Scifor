@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Examples</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Universal Selector -->
+        <section class="section">
+            <h3>* Universal Selector</h3>
+            <div class="example universal-example">
+                <p>This example demonstrates the universal selector that affects all elements.</p>
+            </div>
+        </section>
+
+        <!-- Element Selector -->
+        <section class="section">
+            <h3>Element Selector</h3>
+            <div class="example element-example">
+                <h1>This is an H1 element</h1>
+                <p>This is a paragraph element styled by element selector.</p>
+            </div>
+        </section>
+
+        <!-- Class Selector -->
+        <section class="section">
+            <h3>.class Selector</h3>
+            <div class="example class-example special-box">
+                This is styled using the class selector.
+            </div>
+        </section>
+
+        <!-- ID Selector -->
+        <section class="section">
+            <h3>#id Selector</h3>
+            <div class="example id-example" id="unique-box-example">
+                Styled using the ID selector.
+            </div>
+        </section>
+
+        <!-- Descendant Selector -->
+        <section class="section">
+            <h3>Descendant Selector</h3>
+            <div class="example descendant-example parent">
+                <p class="child">The descendant selector affects this child element inside its parent.</p>
+            </div>
+        </section>
+
+        <!-- Adjacent Sibling Selector -->
+        <section class="section">
+            <h3>Adjacent Sibling Selector</h3>
+            <div class="example sibling-example">
+                <div class="sibling">Sibling 1</div>
+                <div class="sibling-adjacent">This element is adjacent to Sibling 1</div>
+            </div>
+        </section>
+
+        <!-- General Sibling Selector -->
+        <section class="section">
+            <h3>General Sibling Selector</h3>
+            <div class="example general-sibling-example">
+                <p class="general-sibling">First sibling</p>
+                <p class="general-sibling">Second sibling (general sibling)</p>
+            </div>
+        </section>
+
+        <!-- Attribute Selector -->
+        <section class="section">
+            <h3>Attribute Selector</h3>
+            <div class="example attribute-example">
+                <a href="https://example.com" title="Example">Link with attribute selector</a>
+            </div>
+        </section>
+
+        <!-- Pseudo-Class Selector -->
+        <section class="section">
+            <h3>Pseudo-Class Selector</h3>
+            <div class="example pseudo-class-example">
+                <ul class="menu">
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+                <button>Hover me</button>
+            </div>
+        </section>
+
+        <!-- Pseudo-Element Selector -->
+        <section class="section">
+            <h3>Pseudo-Element Selector</h3>
+            <div class="example pseudo-element-example">
+                <p class="pseudo-element">This paragraph has a pseudo-element ::before.</p>
+            </div>
+        </section>
+
+        <!-- Child Selector -->
+        <section class="section">
+            <h3>Child Selector</h3>
+            <div class="example child-selector-example">
+                <ul>
+                    <li class="first-child">This is the first child of the list.</li>
+                    <li>Second child</li>
+                    <li>Third child</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

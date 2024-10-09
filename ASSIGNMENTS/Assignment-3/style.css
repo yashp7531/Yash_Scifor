@@ -1,0 +1,164 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9fafb;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #4a5568;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+/* Section Styling */
+.section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #f7fafc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.example {
+    padding: 20px;
+    background-color: #edf2f7;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #2d3748;
+    border: 1px solid #e2e8f0;
+}
+
+/* Universal Selector Example */
+.universal-example * {
+    color: #1a202c;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Element Selector Example */
+.element-example h1 {
+    color: #2b6cb0;
+}
+
+.element-example p {
+    color: #c53030;
+}
+
+/* Class Selector */
+.special-box {
+    width: 100%;
+    height: 100px;
+    background-color: #48bb78;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ID Selector */
+#unique-box-example {
+    width: 100%;
+    height: 100px;
+    background-color: #4299e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Descendant Selector */
+.parent .child {
+    color: #6b46c1;
+    font-style: italic;
+}
+
+/* Adjacent Sibling Selector */
+.sibling + .sibling-adjacent {
+    width: 100%;
+    height: 50px;
+    background-color: #f6ad55;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 6px;
+}
+
+/* General Sibling Selector */
+.general-sibling ~ .general-sibling {
+    color: #e53e3e;
+}
+
+/* Attribute Selector */
+.attribute-example a[href="https://example.com"] {
+    color: #3182ce;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.attribute-example a:hover {
+    border-bottom: 2px solid #3182ce;
+}
+
+/* Pseudo-Class Selector */
+.menu li:nth-child(odd) {
+    background-color: #e2e8f0;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2b6cb0;
+}
+
+/* Pseudo-Element Selector */
+.pseudo-element::before {
+    content: "Example: ";
+    font-weight: bold;
+    color: #e53e3e;
+}
+
+/* Child Selector */
+.child-selector-example > ul > li:first-child {
+    font-weight: bold;
+    color: #38a169;
+}
