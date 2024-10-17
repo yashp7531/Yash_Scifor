@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation Cards Example</title>
+    <!-- Foundation CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites/dist/css/foundation.min.css"
+    />
+    <style>
+      .primary-card {
+        background-color: #007bff; /* Bootstrap primary color */
+        color: white;
+      }
+      .warning-card {
+        background-color: #ffc107; /* Bootstrap warning color */
+        color: black;
+      }
+      .danger-card {
+        background-color: #dc3545; /* Bootstrap danger color */
+        color: white;
+      }
+      .card {
+        padding: 20px;
+        margin: 10px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-x grid-margin-x">
+        <div class="cell small-4">
+          <div class="card primary-card">
+            <h5>Primary Card</h5>
+            <p>This is a primary card with some content.</p>
+          </div>
+        </div>
+        <div class="cell small-4">
+          <div class="card warning-card">
+            <h5>Warning Card</h5>
+            <p>This is a warning card with some content.</p>
+          </div>
+        </div>
+        <div class="cell small-4">
+          <div class="card danger-card">
+            <h5>Danger Card</h5>
+            <p>This is a danger card with some content.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Foundation JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites/dist/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
