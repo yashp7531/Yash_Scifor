@@ -1,0 +1,69 @@
+/* Custom CSS for the Carousel */
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-img {
+  filter: brightness(80%);
+  transition: filter 0.5s ease-in-out;
+}
+
+.carousel-item:hover .carousel-img {
+  filter: brightness(100%);
+}
+
+.carousel-caption {
+  bottom: 50px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-caption h5 {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  animation-duration: 1s;
+}
+
+.carousel-caption p {
+  font-size: 1.25rem;
+  animation-duration: 1.5s;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+/* Animation Classes (use animate.css for better effects) */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
+
+/* Animation for fade-in and scale effects */
+.carousel-item {
+  opacity: 0;
+  transition: opacity 1s ease, transform 1.5s ease;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.carousel-item-next,
+.carousel-item-prev {
+  transform: scale(0.95);
+  transition: transform 1.5s ease;
+}
+
+/* Indicators styling */
+.carousel-indicators [data-bs-target] {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+}
+
+.carousel-indicators .active {
+  background-color: #007bff;
+}
