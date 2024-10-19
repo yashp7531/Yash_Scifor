@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(to left, #536872, #7cc7e3b2);
+  background-size: 100% 1000vh;
+  height: 10vh;
+  margin: 0;
+}
+.row {
+  margin-bottom: 20px;
+}
+.col-md-4 {
+  margin-bottom: 40px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+.carousel-item img {
+  height: 80vh !important;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+.container .nav-item:hover {
+  transform: scale(1.2, 1.2);
+}
+.container .nav-item:hover {
+  transform: scale(1.2, 1.2);
+  background-color: #ffffff00;
+  color: #fffefe;
+}
