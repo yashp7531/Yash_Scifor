@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(to left, #e3155d85, #5aa67d);
+  background-size: 100% 1000vh;
+  height: 10vh;
+  margin: 0;
+}
+.navbar-brand {
+  font-weight: bold;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+.container .nav-item:hover {
+  transform: scale(1.2, 1.2);
+}
+.container .nav-item:hover {
+  transform: scale(1.2, 1.2);
+  background-color: #ffffff00;
+  color: #fffefe;
+}

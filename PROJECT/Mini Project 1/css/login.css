@@ -1,0 +1,65 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    -30deg,
+    #03a9f4 0%,
+    #3a78b7 50%,
+    #262626 50%,
+    #607d8b 100%
+  );
+  filter: hue-rotate(120deg);
+  animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+.container {
+  background: rgba(0, 0, 0, 0.378);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  width: 300px;
+  text-align: center;
+}
+.container h2 {
+  color: white;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+.container input[type="text"],
+.container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+.container input[type="submit"] {
+  background: white;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.container a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+.container a:hover {
+  text-decoration: underline;
+}
