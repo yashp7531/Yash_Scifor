@@ -1,0 +1,68 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(to left, #b589cf, #ffffffb2);
+  background-size: 100% 1000vh;
+  height: 10vh;
+  margin: 0;
+}
+.navbar-brand {
+  font-weight: bold;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+.container .nav-item:hover {
+  transform: scale(1.2, 1.2);
+}
+.container .nav-item:hover {
+  transform: scale(1.2, 1.2);
+  background-color: #ffffff00;
+  color: #fffefe;
+}
+
+h1,
+h2 {
+  color: #333;
+}
+
+.lead {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.row {
+  margin-bottom: 40px;
+}
+
+.col-md-6 {
+  padding: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li strong {
+  font-weight: bold;
+  color: #337ab7;
+}
+
+ul li:before {
+  font-size: 18px;
+  color: #337ab7;
+  margin-right: 10px;
+}
