@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Game Store</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/mini.css" />
+    <link rel="shortcut icon" href="gamer logo.jpg" type="image/x-icon" />
+    <style>
+      .product-card {
+        transition: transform 0.2s;
+      }
+      .product-card:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="gamer logo.jpg"
+            alt="Logo"
+            class="rounded-circle"
+            style="width: 30px; height: 30px; margin-right: 10px"
+          />Online Game Store
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="mini.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactus.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cart.html">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div
+      id="carouselExampleCaptions"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="./images/grandtheftautovi.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div class="carousel-caption d-md-block">
+            <h3>Grand Theft Auto vi</h3>
+            <p>Coming Soon</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./images/counterstrike2.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div class="carousel-caption d-md-block">
+            <h3>Counter Strike 2</h3>
+            <p>Now Free</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./images/pubg.jpg"
+            class="d-block w-100"
+            alt="..."
+            style="width: 80px"
+          />
+          <div class="carousel-caption d-md-block">
+            <h3>Pubg</h3>
+            <p>Now Free</p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="filter-options mb-3">
+            <label for="filter">Filter by:</label>
+            <select id="filter" class="form-select">
+              <option value="az">A to Z</option>
+              <option value="za">Z to A</option>
+              <option value="lowToHigh">Low price to High price</option>
+              <option value="highToLow">High price to Low price</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="product-list">
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img src="among us.jpg" class="card-img-top" alt="Product Image" />
+            <div class="card-body">
+              <h5 class="card-title">Among Us</h5>
+              <p class="card-text">₹500</p>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="Black Myth Wukong.jpg"
+              class="card-img-top"
+              alt="Product Image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Black Myth Wukong</h5>
+              <p class="card-text">₹2500</p>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="call of duty.jpg"
+              class="card-img-top"
+              alt="Product Image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Call Of Duty</h5>
+              <p class="card-text">₹1000</p>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="container my-5">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card product-card">
+                <img
+                  src="forza horizon 4.jpg"
+                  class="card-img-top"
+                  alt="Product Image"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Forza Horizon 4</h5>
+                  <p class="card-text">₹500</p>
+                  <button class="btn btn-primary">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card product-card">
+                <img
+                  src="grand theft auto v.jpg"
+                  class="card-img-top"
+                  alt="Product Image"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Grand Theft Auto v</h5>
+                  <p class="card-text">₹3000</p>
+                  <button class="btn btn-primary">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card product-card">
+                <img
+                  src="grand theft auto vi.jpg"
+                  class="card-img-top"
+                  alt="Product Image"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Grand Theft Auto vi</h5>
+                  <p class="card-text">Coming Soon</p>
+                  <button class="btn btn-primary">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container my-5">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card product-card">
+                  <img
+                    src="need for speed most wanted.jpg"
+                    class="card-img-top"
+                    alt="Product Image"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Need For Speed Most Wanted</h5>
+                    <p class="card-text">Free</p>
+                    <button class="btn btn-primary">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card product-card">
+                  <img
+                    src="need for speed world.jpg"
+                    class="card-img-top"
+                    alt="Product Image"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Need For Speed World</h5>
+                    <p class="card-text">₹200</p>
+                    <button class="btn btn-primary">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card product-card">
+                  <img
+                    src="Pubg.jpg"
+                    class="card-img-top"
+                    alt="Product Image"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Pubg</h5>
+                    <p class="card-text">Free</p>
+                    <button class="btn btn-primary">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+              <div class="container my-5">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card product-card">
+                      <img
+                        src="rocket league.jpg"
+                        class="card-img-top"
+                        alt="Product Image"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">Rocket League</h5>
+                        <p class="card-text">₹50</p>
+                        <button class="btn btn-primary">Add to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card product-card">
+                      <img
+                        src="./images/counterstrike2.jpg"
+                        class="card-img-top"
+                        alt="Product Image"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">Counter Strike 2</h5>
+                        <p class="card-text">Free</p>
+                        <button class="btn btn-primary">Add to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card product-card">
+                      <img
+                        src="./images/spiderman.jpg"
+                        class="card-img-top"
+                        alt="Product Image"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">Spider Man</h5>
+                        <p class="card-text">4000</p>
+                        <button class="btn btn-primary">Add to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-light text-center py-3">
+      &copy; Online Game Store
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const productList = document.getElementById("product-list");
+      const filterSelect = document.getElementById("filter");
+
+      // sample products data
+      const products = [
+        { name: "Among Us", price: 500 },
+        { name: "Black Myth Wukong", price: 2500 },
+        { name: "Call Of Duty", price: 1000 },
+        { name: "Forza Horizon 4", price: 500 },
+        { name: "Grand Theft Auto v", price: 3000 },
+        { name: "Grand Theft Auto vi", price: null },
+        { name: "Need For Speed Most Wanted", price: 0 },
+        { name: "Need For Speed World", price: 200 },
+        { name: "Pubg", price: 0 },
+        { name: "Rocket League", price: 50 },
+        { name: "Counter Strike 2", price: 0 },
+        { name: "Spider Man", price: 4000 },
+      ];
+
+      // function to generate product cards
+      let cart = [];
+
+      function generateProductCards(products) {
+        const productCards = products
+          .map((product, index) => {
+            return `
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="images/${product.name
+                      .toLowerCase()
+                      .replace(/ /g, "")}.jpg" class="card-img-top" alt="${
+              product.name
+            } Image" />
+                    <div class="card-body">
+                        <h5 class="card-title">${product.name}</h5>
+                        <p class="card-text">${
+                          product.price === null
+                            ? "Coming Soon"
+                            : `₹${product.price}`
+                        }</p>
+                        <button class="btn btn-primary" onclick="addToCart(${index})">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+              `;
+          })
+          .join("");
+        productList.innerHTML = productCards;
+      }
+
+      function addToCart(index) {
+        const product = products[index];
+        if (product.price !== null) {
+          cart.push(product);
+          alert(`${product.name} has been added to your cart!`);
+          // Optionally, you can update the cart display here
+        } else {
+          alert(
+            `${product.name} is coming soon and cannot be added to the cart.`
+          );
+        }
+      }
+      function updateCartCounter() {
+        const counter = document.getElementById("cart-counter");
+        counter.textContent = cart.length;
+      }
+
+      function saveCartToLocalStorage() {
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
+      function loadCartFromLocalStorage() {
+        const savedCart = localStorage.getItem("cart");
+        if (savedCart) {
+          cart = JSON.parse(savedCart);
+          updateCartCounter();
+        }
+      }
+
+      // Call this function when the page loads
+      loadCartFromLocalStorage();
+      function filterProducts(products, filterValue) {
+        switch (filterValue) {
+          case "az":
+            return products.sort((a, b) => a.name.localeCompare(b.name));
+          case "za":
+            return products.sort((a, b) => b.name.localeCompare(a.name));
+          case "lowToHigh":
+            return products.sort((a, b) => a.price - b.price);
+          case "highToLow":
+            return products.sort((a, b) => b.price - a.price);
+          default:
+            return products;
+        }
+      }
+
+      // generate product cards initially
+      generateProductCards(products);
+
+      // add event listener to filter select
+      filterSelect.addEventListener("change", (e) => {
+        const filterValue = e.target.value;
+        const filteredProducts = filterProducts(products, filterValue);
+        generateProductCards(filteredProducts);
+      });
+    </script>
+  </body>
+</html>
