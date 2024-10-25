@@ -1,0 +1,43 @@
+body {
+  background: linear-gradient(1350deg, #6ed2ed, #b7d241);
+}
+
+.grid-container {
+  margin-top: 50px;
+}
+
+.callout {
+  padding: 20px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.password-suggestions ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.85em;
+  color: #333;
+}
+
+.password-suggestions li {
+  color: #888;
+  font-size: 0.9em;
+}
+
+.strength-message {
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.weak {
+  color: #cc4b37; /* Weak - Red */
+}
+
+.medium {
+  color: #e6b800; /* Medium - Yellow */
+}
+
+.strong {
+  color: #3adb76; /* Strong - Green */
+}

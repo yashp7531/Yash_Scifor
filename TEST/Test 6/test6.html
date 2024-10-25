@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x align-center">
+        <div class="cell medium-6 large-4">
+          <form id="registrationForm" class="callout" novalidate>
+            <h2 class="text-center">Test 6 Form</h2>
+
+            <label>
+              Name
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+              />
+              <span class="form-error">Name is required.</span>
+            </label>
+
+            <label>
+              Email
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+              />
+              <span class="form-error"
+                >Please enter a valid email address.</span
+              >
+            </label>
+
+            <label>
+              Password
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter a strong password"
+                required
+              />
+              <div class="password-suggestions" id="passwordSuggestions">
+                <ul>
+                  <li id="uppercase">✔️ Uppercase letter</li>
+                  <li id="lowercase">✔️ Lowercase letter</li>
+                  <li id="number">✔️ Number</li>
+                  <li id="symbol">✔️ Special character</li>
+                </ul>
+              </div>
+              <span class="form-error">Password is required.</span>
+            </label>
+
+            <div id="strengthMessage" class="strength-message"></div>
+
+            <label>
+              Confirm Password
+              <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm your password"
+                required
+              />
+              <span class="form-error">Passwords must match.</span>
+            </label>
+
+            <button type="submit" class="button expanded">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
