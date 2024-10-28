@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variable Display</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #a1b0ce;
+      }
+      .container {
+        background-color: #eca3a3;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+      }
+      .variable {
+        font-weight: bold;
+        color: #333;
+        margin: 8px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Variable Display</h2>
+      <div id="output"></div>
+    </div>
+
+    <script>
+      // Defining variables
+      let name = "Yash";
+      let lname = "Patel";
+      let sname = "Frontend Developer";
+      let age = 24;
+      let email = "yash@gmail.com";
+
+      // Displaying variables
+      document.getElementById("output").innerHTML = `
+            <div class="variable">Name: ${name}</div>
+            <div class="variable">Last Name: ${lname}</div>
+            <div class="variable">Skill: ${sname}</div>
+            <div class="variable">Age: ${age}</div>
+            <div class="variable">Email: ${email}</div>
+        `;
+    </script>
+  </body>
+</html>

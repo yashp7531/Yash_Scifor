@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Striped Table with Foundation</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/css/foundation.min.css"
+    />
+    <style>
+      .striped-table tbody tr:nth-child(odd) {
+        background-color: #f2f2f2; /* Light gray for odd rows */
+      }
+
+      .striped-table tbody tr:nth-child(even) {
+        background-color: #ffffff; /* White for even rows */
+      }
+
+      .striped-table tbody tr:hover {
+        background-color: #e0e0e0; /* Slightly darker gray for hover effect */
+      }
+
+      .striped-table th {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: left;
+      }
+
+      .striped-table td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <h2>Striped Table</h2>
+      <table class="hover striped-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Yash</td>
+            <td>Patel</td>
+            <td>24</td>
+            <td>yash@gmail.com</td>
+          </tr>
+          <tr>
+            <td>Harsh</td>
+            <td>Patel</td>
+            <td>23</td>
+            <td>harsh@gmail.com</td>
+          </tr>
+          <tr>
+            <td>Kalp</td>
+            <td>Patel</td>
+            <td>23</td>
+            <td>kalp@gmail.com</td>
+          </tr>
+          <tr>
+            <td>Vaikal</td>
+            <td>Patel</td>
+            <td>22</td>
+            <td>vaikal@gmail.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/foundation.min.js"></script>
+  </body>
+</html>
