@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primitive Data Types</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        padding: 20px;
+      }
+      .output {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Primitive Data Types in JavaScript</h1>
+    <div id="output" class="output"></div>
+
+    <script>
+      // Declaring variables of each primitive data type
+      let numberVariable = 42; // Number
+      let stringVariable = "Hello, world!"; // String
+      let booleanVariable = true; // Boolean
+      let nullVariable = null; // Null
+      let undefinedVariable; // Undefined (not initialized)
+      let symbolVariable = Symbol("sym"); // Symbol
+      let bigIntVariable = BigInt(123456789012345678901234567890); // BigInt
+
+      // Function to display types
+      function displayType(variableName, variable) {
+        const outputDiv = document.getElementById("output");
+        const message = `${variableName} is of type: ${typeof variable}`;
+        outputDiv.innerHTML += `<p>${message}</p>`;
+        console.log(message);
+      }
+
+      // Displaying types
+      displayType("numberVariable", numberVariable);
+      displayType("stringVariable", stringVariable);
+      displayType("booleanVariable", booleanVariable);
+      displayType("nullVariable", nullVariable);
+      displayType("undefinedVariable", undefinedVariable);
+      displayType("symbolVariable", symbolVariable);
+      displayType("bigIntVariable", bigIntVariable);
+    </script>
+  </body>
+</html>
