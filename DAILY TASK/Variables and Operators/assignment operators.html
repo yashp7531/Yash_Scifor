@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment Operators</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f0f0f0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+      .result {
+        background-color: #e9e9e9;
+        padding: 15px;
+        margin-top: 20px;
+        border-radius: 5px;
+        font-family: monospace;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Assignment Operators</h1>
+      <div id="result" class="result"></div>
+    </div>
+
+    <script>
+      let output = "";
+
+      let x = 10;
+      let y = 5;
+      let z = 2;
+
+      output += `Initial values: x = ${x}, y = ${y}, z = ${z}\n\n`;
+
+      x += y;
+      output += `After x += y: x = ${x}\n`;
+
+      x -= z;
+      output += `After x -= z: x = ${x}\n`;
+
+      y *= z;
+      output += `After y *= z: y = ${y}\n`;
+
+      x /= 2;
+      output += `After x /= 2: x = ${x}\n`;
+
+      y %= 3;
+      output += `After y %= 3: y = ${y}\n`;
+
+      z **= 3;
+      output += `After z **= 3: z = ${z}\n`;
+
+      let a = true;
+      let b = false;
+      a &&= b;
+      output += `\nAfter a &&= b: a = ${a}\n`;
+
+      let c = false;
+      let d = true;
+      c ||= d;
+      output += `After c ||= d: c = ${c}\n`;
+
+      let e = null;
+      let f = 42;
+      e ??= f;
+      output += `After e ??= f: e = ${e}\n`;
+
+      document.getElementById("result").textContent = output;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arithmetic Operations</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+      }
+      #result {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #e9e9e9;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Arithmetic Operations</h1>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      let num1 = 10;
+      let num2 = 5;
+
+      let addition = num1 + num2;
+      let subtraction = num1 - num2;
+      let multiplication = num1 * num2;
+      let division = num1 / num2;
+
+      let resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = `
+            <p>Number 1: ${num1}</p>
+            <p>Number 2: ${num2}</p>
+            <p>Addition: ${num1} + ${num2} = ${addition}</p>
+            <p>Subtraction: ${num1} - ${num2} = ${subtraction}</p>
+            <p>Multiplication: ${num1} * ${num2} = ${multiplication}</p>
+            <p>Division: ${num1} / ${num2} = ${division}</p>
+        `;
+    </script>
+  </body>
+</html>
