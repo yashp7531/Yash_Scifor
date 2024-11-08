@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Concatenator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      label,
+      input,
+      button {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input {
+        width: 100%;
+        padding: 5px;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      #result {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>String Concatenator</h1>
+    <label for="string1">Enter first string:</label>
+    <input type="text" id="string1" placeholder="First string" />
+
+    <label for="string2">Enter second string:</label>
+    <input type="text" id="string2" placeholder="Second string" />
+
+    <button onclick="concatenateStrings()">Concatenate</button>
+
+    <div id="result"></div>
+
+    <script>
+      function concatenateStrings() {
+        const string1 = document.getElementById("string1").value;
+        const string2 = document.getElementById("string2").value;
+        const result = string1 + string2;
+        document.getElementById("result").textContent = "Result: " + result;
+      }
+    </script>
+  </body>
+</html>
