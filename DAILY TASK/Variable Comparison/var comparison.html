@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variable Comparison</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgb(0, 0, 0);
+      }
+      h1 {
+        color: #333;
+      }
+      #result {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #e7f3fe00;
+        border-left: 3px solid #2195f300;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Variable Comparison</h1>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      // Declare two variables
+      let x = 10;
+      let y = 5;
+
+      // Perform comparison operations
+      let resultHTML = `
+            <p>x = ${x}</p>
+            <p>y = ${y}</p>
+            <p>x &gt; y: ${x > y}</p>
+            <p>x &lt; y: ${x < y}</p>
+            <p>x &gt;= y: ${x >= y}</p>
+            <p>x &lt;= y: ${x <= y}</p>
+            <p>x === y: ${x === y}</p>
+            <p>x !== y: ${x !== y}</p>
+        `;
+
+      // Display the results
+      document.getElementById("result").innerHTML = resultHTML;
+    </script>
+  </body>
+</html>
