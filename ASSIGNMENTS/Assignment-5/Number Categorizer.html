@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Categorizer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+      .input-group {
+        margin-bottom: 15px;
+      }
+      input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .result {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #e9e9e9;
+        border-radius: 4px;
+      }
+      .result p {
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Number Categorizer</h1>
+      <div class="input-group">
+        <label for="numberInput">Enter a number:</label>
+        <input
+          type="number"
+          id="numberInput"
+          step="any"
+          placeholder="Enter a number"
+        />
+      </div>
+      <button onclick="categorizeNumber()">Categorize</button>
+      <div class="result" id="result"></div>
+    </div>
+
+    <script>
+      function categorizeNumber() {
+        const numberInput = document.getElementById("numberInput");
+        const resultDiv = document.getElementById("result");
+        const number = parseFloat(numberInput.value);
+
+        if (isNaN(number)) {
+          resultDiv.innerHTML = "<p>Please enter a valid number.</p>";
+          return;
+        }
+
+        let category;
+        if (number > 0) {
+          category = "positive";
+        } else if (number < 0) {
+          category = "negative";
+        } else {
+          category = "zero";
+        }
+
+        resultDiv.innerHTML = `
+                <p>Number: ${number}</p>
+                <p>Category: ${category}</p>
+            `;
+
+        // Clear the input field
+        numberInput.value = "";
+      }
+    </script>
+  </body>
+</html>
