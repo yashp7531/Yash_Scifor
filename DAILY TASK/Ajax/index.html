@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      button {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+      #content {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to the Ajax Page</h1>
+      <p>Click the button</p>
+      <button id="loadAbout">Load About Page</button>
+      <div id="content"></div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("#loadAbout").click(function () {
+          $.ajax({
+            url: "about.html",
+            method: "GET",
+            success: function (response) {
+              $("#content").html(response);
+            },
+            error: function (xhr, status, error) {
+              $("#content").html("<p>Error loading content: " + error + "</p>");
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
