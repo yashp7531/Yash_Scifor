@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse and Sort Array</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <h1>Reverse and Sort Array</h1>
+
+      <!-- Reverse Section -->
+      <div class="reverse-section">
+        <h2>1. Reverse the Order of Elements</h2>
+        <p>Enter characters separated by commas (e.g., x,y,z):</p>
+        <input
+          type="text"
+          id="reverseInput"
+          placeholder="Enter array elements"
+        />
+        <button id="reverseButton">Reverse Array</button>
+        <div class="output-box">
+          <h3>Output:</h3>
+          <p id="reverseOutput">Reversed array will appear here.</p>
+        </div>
+      </div>
+
+      <!-- Sort Section -->
+      <div class="sort-section">
+        <h2>2. Sort the Reversed Array</h2>
+        <p>Enter characters (reversed) separated by commas (e.g., z,y,x):</p>
+        <input type="text" id="sortInput" placeholder="Enter reversed array" />
+        <button id="sortButton">Sort Array</button>
+        <div class="output-box">
+          <h3>Output:</h3>
+          <p id="sortOutput">Sorted array will appear here.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Function to reverse an array
+      function reverseArray(arr) {
+        return arr.slice().reverse();
+      }
+
+      // Function to sort an array alphabetically
+      function sortArray(arr) {
+        return arr.slice().sort();
+      }
+
+      // Event listener for the reverse button
+      document.getElementById("reverseButton").addEventListener("click", () => {
+        const input = document.getElementById("reverseInput").value;
+        if (!input.trim()) {
+          document.getElementById("reverseOutput").textContent =
+            "Please enter valid input.";
+          return;
+        }
+        const inputArray = input.split(",").map((char) => char.trim());
+        const reversed = reverseArray(inputArray);
+        document.getElementById(
+          "reverseOutput"
+        ).textContent = `Reversed Array: [${reversed.join(", ")}]`;
+      });
+
+      // Event listener for the sort button
+      document.getElementById("sortButton").addEventListener("click", () => {
+        const input = document.getElementById("sortInput").value;
+        if (!input.trim()) {
+          document.getElementById("sortOutput").textContent =
+            "Please enter valid input.";
+          return;
+        }
+        const inputArray = input.split(",").map((char) => char.trim());
+        const sorted = sortArray(inputArray);
+        document.getElementById(
+          "sortOutput"
+        ).textContent = `Sorted Array: [${sorted.join(", ")}]`;
+      });
+    </script>
+  </body>
+</html>
