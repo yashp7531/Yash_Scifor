@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch API</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Search Product</h1>
+      <input type="text" id="productId" placeholder="Enter Product ID" />
+      <button id="searchButton">Search</button>
+      <p>Results will be displayed in the console.</p>
+    </div>
+
+    <script>
+      // JavaScript code starts here
+      const searchButton = document.getElementById("searchButton"); // Select the button
+      const productIdInput = document.getElementById("productId"); // Select the input field
+
+      // Add event listener for button click
+      searchButton.addEventListener("click", function () {
+        const productId = productIdInput.value.trim(); // Get the value entered by the user and remove any extra spaces
+
+        // Validate the input
+        if (!productId) {
+          console.error("Please enter a valid Product ID.");
+          return; // Stop execution if the input is empty
+        }
+
+        console.log(`Searching for product with ID: ${productId}...`); // Log the search action
+
+        // Fetch product data from the API
+        fetch(`https://dummyjson.com/products/search?q=phone`) // Construct the API URL using the product ID
+          .then((response) => {
+            // Check if the response is successful (status code 200-299)
+            if (!response.ok) {
+              throw new Error("Product not found!"); // Throw an error if the response is not ok
+            }
+            return response.json(); // Parse the JSON response if successful
+          })
+          .then((data) => {
+            // Log the product data to the console
+            console.log("Product Data:", data);
+          })
+          .catch((error) => {
+            // Catch and log any errors (e.g., product not found or network issues)
+            console.error("Error:", error.message);
+          });
+      });
+    </script>
+  </body>
+</html>
