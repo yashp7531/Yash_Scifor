@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Product Data</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f7fc;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #5a67d8;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      button {
+        background-color: #baad56;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 20px 0;
+        display: block;
+        width: 100%;
+      }
+
+      button:hover {
+        background-color: #4c51bf;
+      }
+
+      #products {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .product {
+        background-color: #fafafa;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Add transition for smooth effect */
+      }
+
+      .product:hover {
+        transform: scale(1.05); /* Slightly enlarge the card */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow */
+        background-color: #f1f5f9; /* Change background color on hover */
+      }
+
+      .product img {
+        max-width: 100%;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
+      .product h3 {
+        color: #2d3748;
+        font-size: 1.2em;
+        margin: 10px 0;
+      }
+
+      .product p {
+        color: #555;
+        font-size: 1em;
+        margin-bottom: 10px;
+      }
+
+      .product .price {
+        font-size: 1.3em;
+        font-weight: bold;
+        color: #38a169;
+      }
+
+      .error {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Product List</h1>
+
+      <button onclick="fetchData()">Fetch Products</button>
+
+      <div id="products"></div>
+    </div>
+
+    <script>
+      // JavaScript function to fetch product data
+      function fetchData() {
+        const url = "https://fakestoreapi.com/products"; // New API for product data
+
+        // Fetch data from the URL
+        fetch(url)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json(); // Parse JSON data
+          })
+          .then((data) => {
+            // Display the fetched data
+            const productsDiv = document.getElementById("products");
+            productsDiv.innerHTML = ""; // Clear any previous content
+
+            // Loop through the data and display each product
+            data.forEach((product) => {
+              const productDiv = document.createElement("div");
+              productDiv.classList.add("product");
+              productDiv.innerHTML = `
+              <img src="${product.image}" alt="${product.title}">
+              <h3>${product.title}</h3>
+              <p>${product.description}</p>
+              <div class="price">$${product.price}</div>
+            `;
+              productsDiv.appendChild(productDiv);
+            });
+          })
+          .catch((error) => {
+            // Handle errors
+            console.error("Fetch error:", error);
+            document.getElementById(
+              "products"
+            ).innerHTML = `<p class="error">Error fetching product data. Please try again later.</p>`;
+          });
+      }
+    </script>
+  </body>
+</html>
