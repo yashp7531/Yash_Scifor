@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heading and Paragraph</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      // Function to create and return h1 and two p elements
+      function createHeadingAndParagraph(headingText, paragraphTexts) {
+        const h1 = document.createElement("h1");
+        h1.textContent = headingText;
+
+        // Create paragraph elements
+        const paragraphs = paragraphTexts.map((text) => {
+          const p = document.createElement("p");
+          p.textContent = text;
+          return p;
+        });
+
+        return [h1, ...paragraphs];
+      }
+
+      // Render the elements to the page
+      const app = document.getElementById("app");
+      const elements = createHeadingAndParagraph("Hello, World!", [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+        "Cras pulvinar lectus ut orci cursus, at pharetra ipsum facilisis. Quisque aliquam nisl in dolor vehicula.",
+      ]);
+
+      // Append all elements to the DOM
+      elements.forEach((element) => app.appendChild(element));
+    </script>
+  </body>
+</html>
