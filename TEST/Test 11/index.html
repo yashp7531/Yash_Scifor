@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String and Array Operations</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Interactive String and Array Tool</h1>
+      </header>
+      <main>
+        <!-- First Feature -->
+        <section class="section">
+          <h2>Array Builder</h2>
+          <div class="input-group">
+            <input
+              type="text"
+              id="array-input"
+              placeholder="Enter a string to add to the array"
+            />
+            <button id="add-to-array-btn">Add String</button>
+          </div>
+          <p>
+            <strong>Array Contents:</strong> <span id="array-display">[ ]</span>
+          </p>
+        </section>
+
+        <!-- Second Feature -->
+        <section class="section">
+          <h2>Uppercase Converter</h2>
+          <div class="input-group">
+            <textarea id="text-area" placeholder="Type text here..."></textarea>
+          </div>
+          <p>
+            <strong>Uppercase Output:</strong>
+            <span id="uppercase-output"></span>
+          </p>
+        </section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
