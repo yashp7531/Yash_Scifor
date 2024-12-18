@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Class Component Example</title>
+
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      class B extends React.Component {
+        render() {
+          return (
+            <div>
+              <h3>First Component: {this.props.data}</h3>
+            </div>
+          );
+        }
+      }
+
+      class A extends React.Component {
+        render() {
+          const name = "yash";
+          const lname = "patel";
+          const age = 23;
+
+          return (
+            <div>
+              <h1>Hello</h1>
+              <B data={`${name} ${lname} ${age}`} />
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<A />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
