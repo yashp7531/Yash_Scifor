@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Details</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- Babel CDN for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #9a642d, #ffffff);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #333;
+      }
+      #root {
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        max-width: 450px;
+        width: 100%;
+        transition: all 0.4s ease;
+      }
+      #root:hover {
+        transform: translateY(-8px) scale(1.05);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(135deg, #c59a9a, #f9f9f9);
+      }
+      h2 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #555;
+        margin: 10px 0;
+      }
+      p strong {
+        color: #2c3e50;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/javascript">
+      // Functional component definition
+      function UserDetails(props) {
+        return `<div>
+                    <h2>User Details</h2>
+                    <p><strong>Name:</strong> ${props.name}</p>
+                    <p><strong>Age:</strong> ${props.age}</p>
+                    <p><strong>Email:</strong> ${props.email}</p>
+                    <p><strong>Mobile No:</strong> ${props.mobileNo}</p>
+                    <p><strong>City:</strong> ${props.city}</p>
+                </div>`;
+      }
+
+      // Example usage of the UserDetails component
+      const user = {
+        name: "Yash Patel",
+        age: 23,
+        email: "yash@gmail.com",
+        mobileNo: "1234567890",
+        city: "Gujarat",
+      };
+
+      // Render the UserDetails component
+      document.getElementById("root").innerHTML = UserDetails(user);
+    </script>
+  </body>
+</html>
