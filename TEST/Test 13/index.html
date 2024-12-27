@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React State Update</title>
+    <!-- React and ReactDOM CDN Links -->
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- Babel CDN Link -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      /* General body styling */
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #3a3a7690;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      /* Container styling */
+      .container {
+        background: #ffffff;
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 400px;
+      }
+
+      /* Title styling */
+      .title {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      /* Card styling for displaying state details */
+      .card {
+        background: #ffffffa3;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Paragraph styling inside the card */
+      .card p {
+        margin: 10px 0;
+        font-size: 16px;
+        color: #555;
+      }
+
+      /* Button styling */
+      .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #ffffff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      /* Button hover effect */
+      .btn:hover {
+        background-color: #daba73;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      class Component extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            name: "Yash",
+            lname: "Patel",
+            age: 23,
+          };
+        }
+
+        handleChangeState = () => {
+          this.setState({
+            name: "Harsh",
+            lname: "Patel",
+            age: 22,
+          });
+        };
+
+        render() {
+          return (
+            <div className="container">
+              <h1 className="title">React State Change</h1>
+              <div className="card">
+                <p>
+                  <strong>First Name:</strong> {this.state.name}
+                </p>
+                <p>
+                  <strong>Last Name:</strong> {this.state.lname}
+                </p>
+                <p>
+                  <strong>Age:</strong> {this.state.age}
+                </p>
+              </div>
+              <button onClick={this.handleChangeState} className="btn">
+                Change State
+              </button>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<Component />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
