@@ -8,3 +8,7 @@ Link 2 - https://yashonlinegamestore.netlify.app/
 2 - My Portfolio
 Frontend - HTML , CSS , JavaScript 
 Link - https://yashportfolio7531.netlify.app/
+
+3 - Crypto Currency Price Tracker
+Frontend - React
+Link - https://yashcryptocurrencytracker.netlify.app/
