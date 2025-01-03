@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odd-Even and Factorial Finder</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #4facfe, #00f2fe);
+        color: #333;
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 20px;
+        color: #000000b4;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      section {
+        max-width: 600px;
+        width: 90%;
+        margin: 20px auto;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        animation: slideIn 1.5s ease-in-out;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      section:hover {
+        transform: scale(1.03);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      h2 {
+        color: #444;
+        text-align: center;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+        transition: border-color 0.3s, box-shadow 0.3s;
+      }
+
+      input[type="number"]:hover {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      }
+
+      button {
+        display: inline-block;
+        padding: 10px 15px;
+        font-size: 16px;
+        color: #fff;
+        background: linear-gradient(to right, #ff416c, #ff4b2b);
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        text-align: center;
+        transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
+      }
+
+      button:hover {
+        transform: scale(1.1);
+        background: linear-gradient(to right, #ff4b2b, #ff416c);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      p {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #e9ecef;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 16px;
+        text-align: center;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateY(30px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+    <script>
+      // Function to check odd or even
+      function checkOddEven() {
+        const number = parseInt(document.getElementById("oddEvenInput").value);
+        const result = number % 2 === 0 ? "Even" : "Odd";
+        document.getElementById(
+          "oddEvenResult"
+        ).textContent = `The number ${number} is ${result}.`;
+      }
+
+      // Function to calculate factorial
+      function calculateFactorial() {
+        const number = parseInt(
+          document.getElementById("factorialInput").value
+        );
+        if (number < 0) {
+          document.getElementById("factorialResult").textContent =
+            "Factorial is not defined for negative numbers.";
+          return;
+        }
+        let factorial = 1;
+        for (let i = 1; i <= number; i++) {
+          factorial *= i;
+        }
+        document.getElementById(
+          "factorialResult"
+        ).textContent = `The factorial of ${number} is ${factorial}.`;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Odd-Even Checker and Factorial Finder</h1>
+
+    <!-- Odd-Even Checker -->
+    <section>
+      <h2>Odd-Even Checker</h2>
+      <label for="oddEvenInput">Enter a number:</label>
+      <input type="number" id="oddEvenInput" />
+      <button onclick="checkOddEven()">Check Odd or Even</button>
+      <p id="oddEvenResult"></p>
+    </section>
+
+    <!-- Factorial Finder -->
+    <section>
+      <h2>Factorial Finder</h2>
+      <label for="factorialInput">Enter a number:</label>
+      <input type="number" id="factorialInput" />
+      <button onclick="calculateFactorial()">Calculate Factorial</button>
+      <p id="factorialResult"></p>
+    </section>
+  </body>
+</html>
