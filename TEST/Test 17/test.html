@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter Component</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f8ff;
+        color: #333;
+      }
+
+      .container {
+        text-align: center;
+        padding: 20px;
+        border: 2px solid #ccc;
+        border-radius: 12px;
+        background: white;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .counter {
+        font-size: 3rem;
+        font-weight: bold;
+        margin: 20px 0;
+        color: #4caf50;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      button {
+        padding: 12px 30px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+        transition: transform 0.2s, background-color 0.3s ease;
+      }
+
+      button:hover {
+        transform: scale(1.1);
+      }
+
+      .increment {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .increment:hover {
+        background-color: #45a049;
+      }
+
+      .decrement {
+        background-color: #f44336;
+        color: white;
+      }
+
+      .decrement:hover {
+        background-color: #d32f2f;
+      }
+
+      .reset {
+        background-color: #2196f3;
+        color: white;
+      }
+
+      .reset:hover {
+        background-color: #1976d2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Counter Component</h1>
+      <div class="counter" id="counter">0</div>
+      <div class="button-container">
+        <button class="increment" onclick="incrementCount()">Increment</button>
+        <button class="decrement" onclick="decrementCount()">Decrement</button>
+        <button class="reset" onclick="resetCount()">Reset</button>
+      </div>
+    </div>
+
+    <script>
+      let count = 0;
+
+      function updateCounter() {
+        const counterElement = document.getElementById("counter");
+        counterElement.textContent = count;
+
+        // Change color dynamically based on count value
+        counterElement.style.color =
+          count > 0 ? "#4caf50" : count < 0 ? "#f44336" : "#333";
+      }
+
+      function incrementCount() {
+        count += 1;
+        updateCounter();
+      }
+
+      function decrementCount() {
+        count -= 1;
+        updateCounter();
+      }
+
+      function resetCount() {
+        count = 0;
+        updateCounter();
+      }
+    </script>
+  </body>
+</html>
