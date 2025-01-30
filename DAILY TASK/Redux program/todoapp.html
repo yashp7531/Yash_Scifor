@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redux To-Do App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.1/redux.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-redux/8.0.5/react-redux.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.22.10/babel.min.js"></script>
+
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        text-align: center;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      .input-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      button {
+        padding: 10px 15px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .add-btn {
+        background-color: #28a745;
+        color: white;
+        margin-left: 10px;
+      }
+
+      .add-btn:hover {
+        background-color: #218838;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        background: #fff;
+        margin: 8px 0;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .delete-btn {
+        background-color: red;
+        color: white;
+        padding: 5px 10px;
+      }
+
+      .delete-btn:hover {
+        background-color: darkred;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Redux To-Do App</h1>
+      <div id="root"></div>
+    </div>
+
+    <script type="text/babel">
+      const { createStore } = Redux;
+      const { Provider, useDispatch, useSelector } = ReactRedux;
+
+      // Redux Action Types
+      const ADD_TODO = "ADD_TODO";
+      const REMOVE_TODO = "REMOVE_TODO";
+
+      // Redux Actions
+      const addTodo = (text) => ({ type: ADD_TODO, payload: text });
+      const removeTodo = (index) => ({ type: REMOVE_TODO, payload: index });
+
+      // Redux Reducer
+      const todoReducer = (state = [], action) => {
+        switch (action.type) {
+          case ADD_TODO:
+            return [...state, action.payload];
+          case REMOVE_TODO:
+            return state.filter((_, i) => i !== action.payload);
+          default:
+            return state;
+        }
+      };
+
+      // Create Redux Store
+      const store = createStore(todoReducer);
+
+      function TodoApp() {
+        const todos = useSelector((state) => state);
+        const dispatch = useDispatch();
+        const [input, setInput] = React.useState("");
+
+        const handleAddTodo = () => {
+          if (input.trim() !== "") {
+            dispatch(addTodo(input));
+            setInput("");
+          }
+        };
+
+        return (
+          <div>
+            <div className="input-container">
+              <input
+                type="text"
+                placeholder="Enter a task..."
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+              />
+              <button className="add-btn" onClick={handleAddTodo}>
+                Add Task
+              </button>
+            </div>
+
+            <ul>
+              {todos.map((todo, index) => (
+                <li key={index}>
+                  {todo}
+                  <button
+                    className="delete-btn"
+                    onClick={() => dispatch(removeTodo(index))}
+                  >
+                    Delete
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById("root")).render(
+        <Provider store={store}>
+          <TodoApp />
+        </Provider>
+      );
+    </script>
+  </body>
+</html>

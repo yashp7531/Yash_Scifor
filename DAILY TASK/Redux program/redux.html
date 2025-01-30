@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redux Counter</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/redux@4.2.1/dist/redux.min.js"></script>
+    <script src="https://unpkg.com/react-redux@7.2.9/dist/react-redux.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const INCREMENT = "INCREMENT";
+      const DECREMENT = "DECREMENT";
+
+      const increment = () => ({ type: INCREMENT });
+      const decrement = () => ({ type: DECREMENT });
+
+      const counterReducer = (state = 0, action) => {
+        switch (action.type) {
+          case INCREMENT:
+            return state + 1;
+          case DECREMENT:
+            return state - 1;
+          default:
+            return state;
+        }
+      };
+
+      const store = Redux.createStore(counterReducer);
+
+      function CounterApp() {
+        const [count, setCount] = React.useState(store.getState());
+
+        React.useEffect(() => {
+          const unsubscribe = store.subscribe(() => {
+            setCount(store.getState());
+          });
+          return () => unsubscribe();
+        }, []);
+
+        return (
+          <div className="counter-container">
+            <h1>Redux Counter App</h1>
+            <h2>Count: {count}</h2>
+            <button onClick={() => store.dispatch(increment())}>
+              Increment
+            </button>
+            <button onClick={() => store.dispatch(decrement())}>
+              Decrement
+            </button>
+          </div>
+        );
+      }
+
+      ReactDOM.render(<CounterApp />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
