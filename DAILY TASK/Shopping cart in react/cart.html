@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.1/redux.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-redux/8.0.5/react-redux.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.21.1/babel.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #38ddfe3c;
+        text-align: center;
+      }
+      .container {
+        max-width: 400px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .item {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        margin: 5px 0;
+        background: #9f9f9f18;
+        border-radius: 5px;
+      }
+      button {
+        padding: 5px 10px;
+        border: none;
+        background: #007bff;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .remove-btn {
+        background: #dc3545;
+      }
+      input {
+        width: 40px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const { createStore } = Redux;
+      const { Provider, useDispatch, useSelector } = ReactRedux;
+
+      const initialState = { cart: [] };
+
+      const ADD = "ADD",
+        REMOVE = "REMOVE",
+        UPDATE = "UPDATE";
+
+      const cartReducer = (state = initialState, action) => {
+        switch (action.type) {
+          case ADD:
+            return {
+              ...state,
+              cart: state.cart.some((i) => i.id === action.payload.id)
+                ? state.cart.map((i) =>
+                    i.id === action.payload.id
+                      ? { ...i, quantity: i.quantity + 1 }
+                      : i
+                  )
+                : [...state.cart, { ...action.payload, quantity: 1 }],
+            };
+          case REMOVE:
+            return {
+              ...state,
+              cart: state.cart.filter((i) => i.id !== action.payload),
+            };
+          case UPDATE:
+            return {
+              ...state,
+              cart: state.cart.map((i) =>
+                i.id === action.payload.id
+                  ? { ...i, quantity: action.payload.quantity }
+                  : i
+              ),
+            };
+          default:
+            return state;
+        }
+      };
+
+      const store = createStore(cartReducer);
+
+      const products = [
+        { id: 1, name: "Laptop", price: 1000 },
+        { id: 2, name: "Phone", price: 500 },
+        { id: 3, name: "Headphones", price: 100 },
+      ];
+
+      const ProductList = () => {
+        const dispatch = useDispatch();
+        return (
+          <div>
+            <h2>Products</h2>
+            {products.map((p) => (
+              <div key={p.id} className="item">
+                <span>
+                  {p.name} - {p.price}
+                </span>
+                <button onClick={() => dispatch({ type: ADD, payload: p })}>
+                  Add
+                </button>
+              </div>
+            ))}
+          </div>
+        );
+      };
+
+      const Cart = () => {
+        const cart = useSelector((state) => state.cart);
+        const dispatch = useDispatch();
+
+        return (
+          <div>
+            <h2>Cart</h2>
+            {cart.length === 0 ? (
+              <p>Cart is empty</p>
+            ) : (
+              cart.map((i) => (
+                <div key={i.id} className="item">
+                  <span>
+                    {i.name} - {i.price}
+                  </span>
+                  <input
+                    type="number"
+                    value={i.quantity}
+                    min="1"
+                    onChange={(e) =>
+                      dispatch({
+                        type: UPDATE,
+                        payload: { id: i.id, quantity: Number(e.target.value) },
+                      })
+                    }
+                  />
+                  <button
+                    className="remove-btn"
+                    onClick={() => dispatch({ type: REMOVE, payload: i.id })}
+                  >
+                    Remove
+                  </button>
+                </div>
+              ))
+            )}
+            <h3>Total: {cart.reduce((t, i) => t + i.price * i.quantity, 0)}</h3>
+          </div>
+        );
+      };
+
+      const App = () => (
+        <div className="container">
+          <h1>Shopping Cart</h1>
+          <ProductList />
+          <hr />
+          <Cart />
+        </div>
+      );
+
+      ReactDOM.render(
+        <Provider store={store}>
+          <App />
+        </Provider>,
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
