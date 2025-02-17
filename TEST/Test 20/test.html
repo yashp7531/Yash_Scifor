@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AngularJS Example</title>
+
+    <!-- AngularJS CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        padding: 50px;
+      }
+
+      .container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: inline-block;
+      }
+
+      h2 {
+        color: #007bff;
+        transition: color 0.3s ease-in-out;
+      }
+
+      h2:hover {
+        color: #ff5733;
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        border: 2px solid #007bff;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      input[type="text"]:focus {
+        border-color: #ff5733;
+        outline: none;
+      }
+
+      .greeting {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .greeting:hover {
+        transform: scale(1.1);
+        color: #007bff;
+      }
+
+      .hover-text {
+        font-size: 16px;
+        font-weight: bold;
+        color: #444;
+        transition: color 0.3s ease-in-out;
+      }
+
+      .hover-text:hover {
+        color: #ff5733;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" ng-app="" ng-init="message='Welcome to Angular!'">
+      <h2 ng-bind="message"></h2>
+
+      <p>
+        Enter Your Name:
+        <input type="text" ng-model="name" placeholder="Your Name" />
+      </p>
+
+      <p class="greeting">Hello, {{ name }}!</p>
+
+      <p class="hover-text" ng-bind="'Hello, Angular Learner!'"></p>
+    </div>
+  </body>
+</html>
